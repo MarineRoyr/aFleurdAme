@@ -292,7 +292,7 @@
 				var $this = $(this);
 
 				// Close.
-					$('<div class="close">Close</div>')
+					$('<div class="close"><p>Retour</p></div>')
 						.appendTo($this)
 						.on('click', function() {
 							location.hash = '';
