@@ -78,13 +78,37 @@
 								<h4>En cours d'élaboration - PHOTOS A VENIR</h4>
 								<span class="image main"><img src="images/pic01.jpg" alt="arche fleurie ronde et pampa" /></span>
 								<p> L’élégance du floral, la tranquillité de l’artificiel.
-Idéal pour les mariés qui souhaitent une décoration raffinée, romantique et sans contrainte logistique.
-
+Idéal pour les mariés qui souhaitent une décoration raffinée, romantique et sans contrainte logistique.</p>
+<p>
 Ce forfait vous offre une scénographie complète, réalisée avec un mélange subtil de fleurs artificielles de qualité, de fleurs séchées, et de fleurs stabilisées (comme la rose éternelle), pour un rendu naturel, durable et réutilisable, sans compromis sur la beauté.</p>
 <section>
 									<h3 class="major">Au Choix</h3>
-									<h4>Forfait bohème chic</h4>
-									<div class="table-wrapper">
+
+									<div class="buttons-container">
+  <button class="toggle-btn" data-target="table1">Forfait Bohème chic</button>
+  <button class="toggle-btn" data-target="table2">Forfait Végétal graphique</button>
+</div>
+
+<script>
+  // Ciblage de tous les boutons
+  const buttons = document.querySelectorAll('.toggle-btn');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-target');
+      const targetTable = document.getElementById(targetId);
+
+      // Toggle affichage (déplier/replier)
+      if (targetTable.style.display === 'none' || !targetTable.style.display) {
+        targetTable.style.display = 'block';
+      } else {
+        targetTable.style.display = 'none';
+      }
+    });
+  });
+</script>
+
+									<div id="table1" class="table-wrapper" style="display:none;">
 										<table>
 											<thead>
 												<tr>
@@ -134,8 +158,8 @@ Ce forfait vous offre une scénographie complète, réalisée avec un mélange s
 										</table>
 									</div>
 
-									<h4>Forfait Végétal Chic</h4>
-									<div class="table-wrapper">
+									
+									<div id="table2" class="table-wrapper" style="display:none;">
 										<table class="major">
 											<thead>
 												<tr>
