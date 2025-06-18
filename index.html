@@ -89,10 +89,7 @@ Ce forfait vous offre une scénographie complète, réalisée avec un mélange s
 											<thead>
 												<tr>
 													<th>INCLUANT</th>
-													<th>Un esprit libre, doux et romantique.
-
-Dans une palette douce mêlant pêche, rose pâle, blanc crème, et des touches de pampa et de fleurs séchées.
-</th>
+													<th>Palette de rose, pêche et crème</th>
 													<th>300€</th>
 												</tr>
 											</thead>
@@ -145,8 +142,7 @@ Dans une palette douce mêlant pêche, rose pâle, blanc crème, et des touches 
 													<th>INCLUANT</th>
 													<th>Un style naturel, sobre et élégant.
 
-Harmonie de verts doux, de beige, de crème et de blanc, pour une ambiance à la fois chic, intemporelle et apaisante.
-
+Blanc, crème et champagne
 													<th>A Partir de 300€</th>
 												</tr>
 											</thead>
@@ -287,11 +283,8 @@ Harmonie de verts doux, de beige, de crème et de blanc, pour une ambiance à la
 								     <div><img src="images/pic025.JPG" alt="Projet 3" /></div>
 									   <div><img src="images/pic026.JPG" alt="Projet 3" /></div>
 									     <div><img src="images/pic027.JPG" alt="Projet 3" /></div>
-										   <div><img src="images/pic028.jpg" alt="Projet 3" /></div>
-  </div>
+								  </div>
 
-  <p>Découvrez mon univers à travers quelques mariages fleuris.
-</p>
   <p>Des bouquets aux arches, en passant par les moindres détails de table, chaque création raconte une histoire, la vôtre.</p>
   <p style="font-size: 0.9em; text-align: center; margin-top: 2em;">
   Crédit photo : 
@@ -680,8 +673,6 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
 
- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
   <!-- Slick JS si besoin -->
   <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
@@ -699,7 +690,23 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
       slidesToShow: 1,
       adaptiveHeight: true
     });
-  });
+	  // Force un redimensionnement après un petit délai
+  setTimeout(function () {
+    $('.carousel').slick('setPosition');
+  }, 100);
+
+  $('.carousel').slick({
+  dots: true,
+  arrows: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  adaptiveHeight: true,
+  prevArrow: '<button type="button" class="slick-prev">‹</button>',
+  nextArrow: '<button type="button" class="slick-next">›</button>',
+});
+});
+  
 </script>
 
 	</body>
