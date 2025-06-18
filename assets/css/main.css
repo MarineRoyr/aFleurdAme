@@ -1669,41 +1669,48 @@ input, select, textarea {
 		}
 
 		.carousel img {
-  width: auto;       /* Image prend toute la largeur du conteneur */
-  height: 400px;      /* Hauteur ajustée automatiquement pour garder les proportions */
+  width: 100%;       /* Image prend toute la largeur du conteneur */
+  height: auto;      /* Hauteur ajustée automatiquement pour garder les proportions */
   display: block;    /* Évite un petit espace blanc en dessous de l’image */
   object-fit: cover; /* Optionnel : remplit le conteneur sans déformer, coupe si besoin */
 }
 
-/* Limiter la largeur du carrousel (optionnel) */
+/* Cache initial */
 .carousel {
-  max-width: 600px;  /* Ou la largeur que tu veux */
-  margin: 0 auto;    /* Centrer horizontalement */
+  visibility: hidden;
+  position: relative;
+  margin-bottom: 2rem;
 }
 
-.slick-prev,
-.slick-next {
-  background: transparent;
+/* Supprimer dots */
+.slick-dots {
+  display: none !important;
+}
+
+/* Supprimer les flèches par défaut (safety) */
+.slick-arrow {
+  all: unset;
+}
+
+/* Flèches SVG personnalisées */
+.custom-arrow {
+  background: rgba(0, 0, 0, 0.4);
   border: none;
-  color: #d8d8d8;
-  font-size: 2.5rem;
-  line-height: 1;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  z-index: 10;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
-  z-index: 10;
-  padding: 0;
-  width: auto;
-  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
 }
 
-.slick-prev:hover,
-.slick-next:hover {
-  opacity: 1;
-}
+
 
 .slick-prev {
   left: 10px;
@@ -1712,6 +1719,16 @@ input, select, textarea {
 .slick-next {
   right: 10px;
 }
+
+/* Responsive */
+@media (max-width: 600px) {
+  .custom-arrow {
+    width: 36px;
+    height: 36px;
+    top: 45%;
+  }
+}
+
 
 .buttons-container {
   display: flex;

@@ -14,6 +14,30 @@
 		$main = $('#main'),
 		$main_articles = $main.children('article');
 
+					function initCarouselInArticle() {
+	const $carousel = $('.carousel');
+
+	if ($carousel.length && !$carousel.hasClass('slick-initialized')) {
+		$carousel.on('init', function () {
+			$(this).css('visibility', 'visible');
+		});
+
+		$carousel.slick({
+			dots: false,
+			arrows: true,
+			infinite: true,
+			speed: 500,
+			slidesToShow: 1,
+			adaptiveHeight: true,
+		});
+
+		// Sécurité : repositionner après insertion
+		setTimeout(() => {
+			$carousel.slick('setPosition');
+		}, 200);
+	}
+}
+
 	// Breakpoints.
 		breakpoints({
 			xlarge:   [ '1281px',  '1680px' ],
@@ -68,6 +92,9 @@
 	// Main.
 		var	delay = 325,
 			locked = false;
+
+
+
 
 		// Methods.
 			$main._show = function(id, initial) {
@@ -140,6 +167,8 @@
 
 										$article.addClass('active');
 
+									
+
 										// Window stuff.
 											$window
 												.scrollTop(0)
@@ -178,6 +207,7 @@
 									setTimeout(function() {
 
 										$article.addClass('active');
+											initCarouselInArticle();
 
 										// Window stuff.
 											$window
@@ -397,5 +427,9 @@
 					$window.on('load', function() {
 						$main._show(location.hash.substr(1), true);
 					});
+
+
+
+		
 
 })(jQuery);
