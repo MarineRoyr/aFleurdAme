@@ -1743,6 +1743,5 @@ input, select, textarea {
   max-width: 300px;      /* largeur max */
   margin: 10px 0;
   cursor: pointer;
-color:rgb(90, 84, 84);
-background-color: #d8d8d8;
+background-color: #3d5343;
 }
