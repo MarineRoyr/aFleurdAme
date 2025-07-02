@@ -96,7 +96,7 @@
   <h3>Location clé en main</h3>
   <h4>Disponible à partir d'Août 2025</h4>
   <h5>PHOTOS A VENIR</h5>
-								<span class="image main"><img src="images/pic01.jpg" alt="arche fleurie ronde et pampa" /></span>
+								<span class="image main"><img src="images/pic033.jpg" alt="table fleurie" /></span>
 								<p> L’élégance des fleurs, la tranquillité de l’artificiel.
 Idéal pour les futurs mariés qui souhaitent une décoration au top avec un budget maîtrisé.</p>
 <p>
@@ -110,25 +110,6 @@ Ce forfait vous offre une prestation complète, réalisée avec un mélange de f
 									<div class="buttons-container">
   <button class="toggle-btn" data-target="table1">Bohème chic</button>
 </div>
-
-<script>
-  // Ciblage de tous les boutons
-  const buttons = document.querySelectorAll('.toggle-btn');
-
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const targetId = btn.getAttribute('data-target');
-      const targetTable = document.getElementById(targetId);
-
-      // Toggle affichage (déplier/replier)
-      if (targetTable.style.display === 'none' || !targetTable.style.display) {
-        targetTable.style.display = 'block';
-      } else {
-        targetTable.style.display = 'none';
-      }
-    });
-  });
-</script>
 
 									<div id="table1" class="table-wrapper" style="display:none;">
 										<h3>Bohème chic</h3>
@@ -189,7 +170,7 @@ Ce forfait vous offre une prestation complète, réalisée avec un mélange de f
 											</tfoot>
 										</table>
 									</div>
-<div class="buttons-container"></div>
+<div class="buttons-container">
 <button class="toggle-btn" data-target="table2">Végétal graphique</button>
 								</div>
 									
@@ -318,6 +299,29 @@ Ce forfait vous offre une prestation complète, réalisée avec un mélange de f
 			</tr>
 		</tfoot>
 	</table>
+
+<script>
+  const buttons = document.querySelectorAll('.toggle-btn');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-target');
+
+      // Fermer tous les tableaux
+      document.querySelectorAll('.table-wrapper').forEach(table => {
+        if (table.id !== targetId) {
+          table.style.display = 'none';
+        }
+      });
+
+      // Toggle l'affichage de la table cible
+      const targetTable = document.getElementById(targetId);
+      targetTable.style.display = (targetTable.style.display === 'block') ? 'none' : 'block';
+    });
+  });
+</script>
+
+
 </div>
 
 
@@ -371,7 +375,6 @@ Ce forfait vous offre une prestation complète, réalisée avec un mélange de f
 									     <div><img src="images/pic027.JPG" alt="Projet 3" /></div>
 										   <div><img src="images/pic028.jpg" alt="Projet 3" /></div>
 										     <div><img src="images/pic029.JPG" alt="Projet 3" /></div>
-											   <div><img src="images/pic030.JPG" alt="Projet 3" /></div>
 											   <div><img src="images/pic031.JPG" alt="Projet 3" /></div>
 											   <div><img src="images/pic043.jpg" alt="Projet 3" /></div>
 											     
