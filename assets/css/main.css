@@ -1673,7 +1673,7 @@ input, select, textarea {
 		}
 
 		.carousel img {
-  width: 100%;       /* Image prend toute la largeur du conteneur */
+  width: 90%;       /* Image prend toute la largeur du conteneur */
   height: auto;      /* Hauteur ajustée automatiquement pour garder les proportions */
   display: block;    /* Évite un petit espace blanc en dessous de l’image */
   object-fit: cover; /* Optionnel : remplit le conteneur sans déformer, coupe si besoin */
